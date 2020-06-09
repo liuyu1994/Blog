@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java语言进阶 | Lyouth's Note</title><meta name="description" content="本篇文章主要复习Object类型、常用API、集合、线程、文件、字节(符)流等、网络编程、Lambda表达式"><meta name="keywords" content="Java进阶"><meta name="author" content="Lyouth"><meta name="copyright" content="Lyouth"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/blog/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Java语言进阶"><meta name="twitter:description" content="本篇文章主要复习Object类型、常用API、集合、线程、文件、字节(符)流等、网络编程、Lambda表达式"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213113638.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Java语言进阶"><meta property="og:url" content="https://www.liuyu.pw/blog/posts/616958743.html"><meta property="og:site_name" content="Lyouth's Note"><meta property="og:description" content="本篇文章主要复习Object类型、常用API、集合、线程、文件、字节(符)流等、网络编程、Lambda表达式"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213113638.jpg"><meta property="article:published_time" content="2019-12-13T03:29:25.000Z"><meta property="article:modified_time" content="2020-06-05T08:36:38.507Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java语言进阶 | Lyouth's Note</title><meta name="description" content="本篇文章主要复习Object类型、常用API、集合、线程、文件、字节(符)流等、网络编程、Lambda表达式"><meta name="keywords" content="Java进阶"><meta name="author" content="Lyouth"><meta name="copyright" content="Lyouth"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/blog/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://hm.baidu.com"/><link rel="dns-prefetch" href="https://hm.baidu.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Java语言进阶"><meta name="twitter:description" content="本篇文章主要复习Object类型、常用API、集合、线程、文件、字节(符)流等、网络编程、Lambda表达式"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213113638.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Java语言进阶"><meta property="og:url" content="https://www.liuyu.pw/blog/posts/616958743.html"><meta property="og:site_name" content="Lyouth's Note"><meta property="og:description" content="本篇文章主要复习Object类型、常用API、集合、线程、文件、字节(符)流等、网络编程、Lambda表达式"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213113638.jpg"><meta property="article:published_time" content="2019-12-13T03:29:25.000Z"><meta property="article:modified_time" content="2020-06-05T08:36:38.507Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
 var t = Cookies.get("theme")
 if (autoChangeMode == '1'){
   var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -42,7 +42,14 @@ function activateLightMode(){
   if (document.querySelector('meta[name="theme-color"]') !== null){
   document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
   }
-}</script><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="canonical" href="https://www.liuyu.pw/blog/posts/616958743.html"><link rel="prev" title="Linux基本操作记录" href="https://www.liuyu.pw/blog/posts/1406167115.html"><link rel="next" title="Java面向对象与常见类" href="https://www.liuyu.pw/blog/posts/87330513.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+}</script><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="canonical" href="https://www.liuyu.pw/blog/posts/616958743.html"><link rel="prev" title="Linux基本操作记录" href="https://www.liuyu.pw/blog/posts/1406167115.html"><link rel="next" title="Java面向对象与常见类" href="https://www.liuyu.pw/blog/posts/87330513.html"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?http://data.zz.baidu.com/urls?site=www.liuyu.pw&token=XykIEZlfIH98tMdB";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
   root: '/blog/',
   algolia: undefined,
   localSearch: undefined,
@@ -63,13 +70,13 @@ function activateLightMode(){
   medium_zoom: true,
   fancybox: false,
   Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
-  baiduPush: false,
+  baiduPush: true,
   highlightCopy: true,
   highlightLang: true,
   highlightShrink: 'false',
   isFontAwesomeV5: false,
   isPhotoFigcaption: true,
-  islazyload: false,
+  islazyload: true,
   isanchor: false
   
 }</script><script>var GLOBAL_CONFIG_SITE = { 
@@ -103,7 +110,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> + <span class="string">"name='"</span> + name + <span class="string">'\''</span> + <span class="string">", age="</span> + age + <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 省略构造器与Getter Setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在IntelliJ IDEA中，可以点击<code>Code</code>菜单中的<code>Generate...</code>，也可以使用快捷键<code>alt+insert</code>，点击<code>toString()</code>选项。选择需要包含的成员变量并确定。如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213114232.png" alt="toString方法的自动重写"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213114232.png" alt="toString方法的自动重写"></p>
 <blockquote>
 <p>小贴士： 在我们直接使用输出语句输出对象名的时候,其实通过该对象调用了其toString()方法。</p>
 </blockquote>
@@ -118,7 +125,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;	</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果对象地址一样，则认为相同</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">// 如果参数为空，或者类型信息不一样，则认为不同</span></span><br><span class="line">        <span class="keyword">if</span> (o == <span class="keyword">null</span> || getClass() != o.getClass())</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// 转换为当前类型</span></span><br><span class="line">        Person person = (Person) o;</span><br><span class="line">        <span class="comment">// 要求基本类型相等，并且将引用类型交给java.util.Objects类的equals静态方法取用结果</span></span><br><span class="line">        <span class="comment">//这里示例：年龄和姓名一直就算相同。age是int类型，直接==判断，name是String类型，需要用equals方法</span></span><br><span class="line">        <span class="keyword">return</span> age == person.age &amp;&amp; Objects.equals(name, person.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这段代码充分考虑了对象为空、类型一致等问题，但方法内容并不唯一。大多数IDE都可以自动生成equals方法的代码内容。在IntelliJ IDEA中，可以使用<code>Code</code>菜单中的<code>Generate…</code>选项，也可以使用快捷键<code>alt+insert</code>，并选择<code>equals() and hashCode()</code>进行自动代码生成。如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213114232.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213114232.png" alt=""></p>
 <blockquote>
 <p>tips：Object类当中的hashCode等其他方法，今后学习。</p>
 </blockquote>
@@ -227,7 +234,7 @@ function activateLightMode(){
 </blockquote>
 <h2 id="4-Calendar类"><a href="#4-Calendar类" class="headerlink" title="4.Calendar类"></a>4.Calendar类</h2><p><strong><font size="3">概念:</font></strong></p>
 <p>日历我们都见过</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213143748.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213143748.png" alt=""></p>
 <p><code>java.util.Calendar</code>是日历类，在Date后出现，替换掉了许多Date的方法。该类将所有可能用到的时间信息封装为静态成员变量，方便获取。日历类就是方便获取各个时间属性的。</p>
 <p><strong><font size="3">获取方式:</font></strong></p>
 <p>Calendar为抽象类，由于语言敏感性，Calendar类在创建对象时并非直接创建，而是通过静态方法创建，返回子类对象，如下：</p>
@@ -376,7 +383,7 @@ function activateLightMode(){
 <h2 id="2-StringBuilder概述"><a href="#2-StringBuilder概述" class="headerlink" title="2.StringBuilder概述"></a>2.StringBuilder概述</h2><p>查阅<code>java.lang.StringBuilder</code>的API，StringBuilder又称为可变字符序列，它是一个类似于 String 的字符串缓冲区，通过某些方法调用可以改变该序列的长度和内容。</p>
 <p>原来StringBuilder是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符串。并且能够对其中的字符串进行各种操作。</p>
 <p>它的内部拥有一个数组用来存放字符串内容，进行字符串拼接时，直接在数组中加入新内容。StringBuilder会自动维护数组的扩容。原理如下图所示：(默认16字符空间，超过自动扩充)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213153410.bmp" alt="06-StringBuilder的原理"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191213153410.bmp" alt="06-StringBuilder的原理"></p>
 <h2 id="3-构造方法"><a href="#3-构造方法" class="headerlink" title="3.构造方法"></a>3.构造方法</h2><p>根据StringBuilder的API文档，常用构造方法有2个：</p>
 <ul>
 <li><code>public StringBuilder()</code>：构造一个空的StringBuilder容器。</li>
@@ -488,7 +495,7 @@ function activateLightMode(){
 <li><strong>Collection</strong>：单列集合类的根接口，用于存储一系列符合某种规则的元素，它有两个重要的子接口，分别是<code>java.util.List</code>和<code>java.util.Set</code>。其中，<code>List</code>的特点是元素有序、元素可重复。<code>Set</code>的特点是元素无序，而且不可重复。<code>List</code>接口的主要实现类有<code>java.util.ArrayList</code>和<code>java.util.LinkedList</code>，<code>Set</code>接口的主要实现类有<code>java.util.HashSet</code>和<code>java.util.TreeSet</code>。</li>
 </ul>
 <p>从上面的描述可以看出JDK中提供了丰富的集合类库，为了便于初学者进行系统地学习，接下来通过一张图来描述整个集合类的继承体系。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216101028.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216101028.png" alt=""></p>
 <p>其中，橙色框里填写的都是接口类型，而蓝色框里填写的都是具体的实现类。这几天将针对图中所列举的集合类进行逐一地讲解。</p>
 <p>集合本身是一个工具，它存放在java.util包中。在<code>Collection</code>接口定义着单列集合框架中最最共性的内容。</p>
 <h2 id="3-Collection-常用功能"><a href="#3-Collection-常用功能" class="headerlink" title="3.Collection 常用功能"></a>3.Collection 常用功能</h2><p>Collection是所有单列集合的父接口，因此在Collection中定义了单列集合(List和Set)通用的一些方法，这些方法可用于操作所有的单列集合。方法如下：</p>
@@ -529,7 +536,7 @@ function activateLightMode(){
 </blockquote>
 <h2 id="2-迭代器的实现原理"><a href="#2-迭代器的实现原理" class="headerlink" title="2.迭代器的实现原理"></a>2.迭代器的实现原理</h2><p>我们在之前案例已经完成了Iterator遍历集合的整个过程。当遍历集合时，首先通过调用t集合的iterator()方法获得迭代器对象，然后使用hashNext()方法判断集合中是否存在下一个元素，如果存在，则调用next()方法将元素取出，否则说明已到达了集合末尾，停止遍历元素。</p>
 <p>Iterator迭代器对象在遍历集合时，内部采用指针的方式来跟踪集合中的元素，为了让初学者能更好地理解迭代器的工作原理，接下来通过一个图例来演示Iterator对象迭代元素的过程：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216101316.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216101316.bmp" alt=""></p>
 <p>在调用Iterator的next方法之前，迭代器的索引位于第一个元素之前，不指向任何元素，当第一次调用迭代器的next方法后，迭代器的索引会向后移动一位，指向第一个元素并将该元素返回，当再次调用next方法时，迭代器的索引会指向第二个元素并将该元素返回，依此类推，直到hasNext方法返回false，表示到达了集合的末尾，终止对元素的遍历。</p>
 <h2 id="3-增强for"><a href="#3-增强for" class="headerlink" title="3.增强for"></a>3.增强for</h2><p>增强for循环(也称for each循环)是<strong>JDK1.5</strong>以后出来的一个高级for循环，<strong>专门用来遍历数组和集合</strong>的。它的内部原理其实是个<strong>Iterator迭代器</strong>，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。</p>
 <p>格式：</p>
@@ -655,7 +662,7 @@ function activateLightMode(){
 <h1 id="第十章-数据结构"><a href="#第十章-数据结构" class="headerlink" title="第十章 数据结构"></a>第十章 数据结构</h1><h2 id="1-数据结构有什么用？"><a href="#1-数据结构有什么用？" class="headerlink" title="1.数据结构有什么用？"></a>1.数据结构有什么用？</h2><p>当你用着java里面的容器类很爽的时候，你有没有想过，怎么<code>ArrayList</code>就像一个无限扩充的数组，也好像链表之类的。好用吗？好用，这就是数据结构的用处，只不过你在不知不觉中使用了。</p>
 <p>现实世界的存储，我们使用的工具和建模。每种数据结构有自己的优点和缺点，想想如果Google的数据用的是数组的存储，我们还能方便地查询到所需要的数据吗？而算法，在这么多的数据中如何做到最快的插入，查找，删除，也是在追求更快。</p>
 <p>我们java是面向对象的语言，就好似自动档轿车，C语言好似手动档吉普。数据结构呢？是变速箱的工作原理。你完全可以不知道变速箱怎样工作，就把自动档的车子从 A点 开到 B点，而且未必就比懂得的人慢。写程序这件事，和开车一样，经验可以起到很大作用，但如果你不知道底层是怎么工作的，就永远只能开车，既不会修车，也不能造车。当然了，数据结构内容比较多，细细的学起来也是相对费功夫的，不可能达到一蹴而就。我们将常见的数据结构：<strong>堆栈、队列、数组、链表和红黑树</strong>这几种给大家介绍一下，作为数据结构的入门，了解一下它们的特点即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103311.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103311.png" alt=""></p>
 <h2 id="2-常见的数据结构"><a href="#2-常见的数据结构" class="headerlink" title="2.常见的数据结构"></a>2.常见的数据结构</h2><p>数据存储的常用结构有：栈、队列、数组、链表和红黑树。我们分别来了解一下：</p>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><ul>
 <li><strong>栈</strong>：<strong>stack</strong>,又称堆栈，它是<strong>运算受限的线性表</strong>，其限制是<strong>仅允许</strong>在标的一端进行插入和删除操作，<strong>不允许</strong>在其他任何位置进行添加、查找、删除等操作。</li>
@@ -665,7 +672,7 @@ function activateLightMode(){
 <li><p><strong>先进后出</strong>: 即存进去的元素，要在后它后面的元素依次取出后，才能取出该元素。例如，子弹压进弹夹，先压进去的子弹在下面，后压进去的子弹在上面，当开枪时，先弹出上面的子弹，然后才能弹出下面的子弹。</p>
 </li>
 <li><p><strong>栈的入口、出口的都是栈的顶端位置。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103426.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103426.png" alt=""></p>
 </li>
 </ul>
 <p>这里两个名词需要注意：</p>
@@ -681,19 +688,19 @@ function activateLightMode(){
 <li>先进先出（即，存进去的元素，要在后它前面的元素依次取出后，才能取出该元素）。例如，小火车过山洞，车头先进去，车尾后进去；车头先出来，车尾后出来。</li>
 <li>队列的入口、出口各占一侧。例如，下图中的左侧为入口，右侧为出口。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103449.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103449.bmp" alt=""></p>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
 <li><strong>数组</strong>:<strong>Array</strong>,是有序的元素序列，数组是在内存中开辟一段连续的空间，并在此空间存放元素。就像是一排出租屋，有100个房间，从001到100每个房间都有固定编号，通过编号就可以快速找到租房子的人。</li>
 </ul>
 <p>简单的说,采用该结构的集合，对元素的存取有如下的特点：</p>
 <ul>
 <li><p>查找元素快：通过索引，可以快速访问指定位置的元素</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103513.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103513.png" alt=""></p>
 </li>
 <li><p>增删元素慢</p>
 <ul>
-<li><strong>指定索引位置增加元素</strong>：需要创建一个新数组，将指定新元素存储在指定索引位置，再把原数组元素根据索引，复制到新数组对应索引的位置。如下图:<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103624.png" alt=""></li>
-<li><strong>指定索引位置删除元素：</strong>需要创建一个新数组，把原数组元素根据索引，复制到新数组对应索引的位置，原数组中指定索引位置元素不复制到新数组中。如下图<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103604.png" alt=""></li>
+<li><strong>指定索引位置增加元素</strong>：需要创建一个新数组，将指定新元素存储在指定索引位置，再把原数组元素根据索引，复制到新数组对应索引的位置。如下图:<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103624.png" alt=""></li>
+<li><strong>指定索引位置删除元素：</strong>需要创建一个新数组，把原数组元素根据索引，复制到新数组对应索引的位置，原数组中指定索引位置元素不复制到新数组中。如下图<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103604.png" alt=""></li>
 </ul>
 </li>
 </ul>
@@ -703,23 +710,23 @@ function activateLightMode(){
 <li><p>一个是存储数据元素的<strong>数据域</strong></p>
 </li>
 <li><p>一个是存储<strong>下一个结点地址的指针域</strong>。我们常说的链表结构有<strong>单向链表与双向链表</strong>，那么这里给大家介绍的是<strong>单向链表</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103654.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103654.png" alt=""></p>
 </li>
 </ul>
 <p>简单的说，采用该结构的集合，对元素的存取有如下的特点：</p>
 <ul>
 <li><p>多个结点之间，通过地址进行连接。例如，多个人手拉手，每个人使用自己的右手拉住下个人的左手，依次类推，这样多个人就连在一起了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103715.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103715.png" alt=""></p>
 </li>
 <li><p>查找元素慢：想查找某个元素，需要通过连接的节点，依次向后查找指定元素</p>
 </li>
 <li><p>增删元素快：</p>
 <ul>
 <li><p>增加元素：只需要修改连接下个元素的地址即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103740.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103740.png" alt=""></p>
 </li>
 <li><p>删除元素：只需要修改连接下个元素的地址即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103757.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103757.bmp" alt=""></p>
 </li>
 </ul>
 </li>
@@ -730,7 +737,7 @@ function activateLightMode(){
 <p>简单的理解，就是一种类似于我们生活中树的结构，只不过每个结点上<strong>都最多只能有两个子结点</strong>。</p>
 <p>二叉树是每个节点最多有两个子树的树结构。顶上的叫<strong>根结点</strong>，两边被称作<strong>左子树</strong>和<strong>右子树</strong>。</p>
 <p>如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103820.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216103820.bmp" alt=""></p>
 <p>我们要说的是二叉树的一种比较有意思的叫做<strong>红黑树</strong>，红黑树本身就是一颗二叉查找树，将节点插入后，该树仍然是一颗二叉查找树。也就意味着，树的键值仍然是有序的。</p>
 <p>红黑树的约束:</p>
 <ol>
@@ -770,7 +777,7 @@ function activateLightMode(){
 <blockquote>
 <p>LinkedList是一个双向链表，那么双向链表是什么样子的呢，我们用个图了解下</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216111916.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216111916.png" alt=""></p>
 <p>实际开发中对一个集合元素的添加与删除经常涉及到首尾操作，而LinkedList提供了大量首尾操作的方法。这些方法我们作为了解即可：</p>
 <ul>
 <li><code>public void addFirst(E e)</code>:将指定元素插入此列表的开头。</li>
@@ -805,10 +812,10 @@ function activateLightMode(){
 </blockquote>
 <h2 id="2-HashSet集合存储数据的结构（哈希表）"><a href="#2-HashSet集合存储数据的结构（哈希表）" class="headerlink" title="2.HashSet集合存储数据的结构（哈希表）"></a>2.HashSet集合存储数据的结构（哈希表）</h2><p>什么是哈希表呢？</p>
 <p>在<strong>JDK1.8</strong>之前，哈希表底层采用<strong>数组+链表</strong>实现，即使用链表处理冲突，同一hash值的链表都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。而<strong>JDK1.8</strong>中，哈希表存储采用<strong>数组+链表+红黑树实现</strong>，当链表长度超过阈值（8）时，将链表转换为红黑树，这样大大减少了查找时间。</p>
-<p>简单的来说，哈希表是由<strong>数组+链表+红黑树</strong>（JDK1.8增加了红黑树部分）实现的，如下图所示。<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218172331.png" alt=""></p>
+<p>简单的来说，哈希表是由<strong>数组+链表+红黑树</strong>（JDK1.8增加了红黑树部分）实现的，如下图所示。<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218172331.png" alt=""></p>
 <p>看到这张图就有人要问了，这个是怎么存储的呢？</p>
 <p>为了方便大家的理解我们结合一个存储流程图来说明一下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216112200.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216112200.png" alt=""></p>
 <p>总而言之，<strong>JDK1.8</strong>引入红黑树大程度优化了HashMap的性能，那么对于我们来讲保证HashSet集合元素的唯一，其实就是根据对象的hashCode和equals方法来决定的。如果我们往集合中存放自定义的对象，那么保证其唯一，就必须复写hashCode和equals方法建立属于当前对象的比较方式。</p>
 <h2 id="3-HashSet存储自定义类型元素"><a href="#3-HashSet存储自定义类型元素" class="headerlink" title="3.HashSet存储自定义类型元素"></a>3.HashSet存储自定义类型元素</h2><p>给HashSet中存放自定义类型元素时，需要重写对象中的hashCode和equals方法，建立自己的比较方式，才能保证HashSet集合中的对象唯一</p>
 <p>创建自定义Student类</p>
@@ -900,7 +907,7 @@ function activateLightMode(){
 
 <h1 id="第十五章-Map集合"><a href="#第十五章-Map集合" class="headerlink" title="第十五章 Map集合"></a>第十五章 Map集合</h1><h2 id="15-1-概述"><a href="#15-1-概述" class="headerlink" title="15.1 概述"></a>15.1 概述</h2><p>现实生活中，我们常会看到这样的一种集合：IP地址与主机名，身份证号与个人，系统用户名与系统用户对象等，这种一一对应的关系，就叫做映射。Java提供了专门的集合类用来存放这种对象关系的对象，即<code>java.util.Map</code>接口。</p>
 <p>我们通过查看<code>Map</code>接口描述，发现<code>Map</code>接口下的集合与<code>Collection</code>接口下的集合，它们存储数据的形式不同，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216160638.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216160638.bmp" alt=""></p>
 <ul>
 <li><code>Collection</code>中的集合，元素是孤立存在的（理解为单身），向集合中存储元素采用一个个元素的方式存储。</li>
 <li><code>Map</code>中的集合，元素是成对存在的(理解为夫妻)。每个元素由键与值两部分组成，通过键可以找对所对应的值。</li>
@@ -943,7 +950,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建Map集合对象 </span></span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">        <span class="comment">//添加元素到集合 </span></span><br><span class="line">        map.put(<span class="string">"胡歌"</span>, <span class="string">"霍建华"</span>);</span><br><span class="line">        map.put(<span class="string">"郭德纲"</span>, <span class="string">"于谦"</span>);</span><br><span class="line">        map.put(<span class="string">"薛之谦"</span>, <span class="string">"大张伟"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取所有的键  获取键集</span></span><br><span class="line">        Set&lt;String&gt; keys = map.keySet();</span><br><span class="line">        <span class="comment">// 遍历键集 得到 每一个键</span></span><br><span class="line">        <span class="keyword">for</span> (String key : keys) &#123;</span><br><span class="line">          	<span class="comment">//key  就是键</span></span><br><span class="line">            <span class="comment">//获取对应值</span></span><br><span class="line">            String value = map.get(key);</span><br><span class="line">            System.out.println(key+<span class="string">"的CP是："</span>+value);</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>遍历图解：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162553.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162553.bmp" alt=""></p>
 <h2 id="15-5-Entry键值对对象"><a href="#15-5-Entry键值对对象" class="headerlink" title="15.5  Entry键值对对象"></a>15.5  Entry键值对对象</h2><p>我们已经知道，<code>Map</code>中存放的是两种对象，一种称为<strong>key</strong>(键)，一种称为<strong>value</strong>(值)，它们在在<code>Map</code>中是一一对应关系，这一对对象又称做<code>Map</code>中的一个<code>Entry(项)</code>。<code>Entry</code>将键值对的对应关系封装成了对象。即键值对对象，这样我们在遍历<code>Map</code>集合时，就可以从每一个键值对（<code>Entry</code>）对象中获取对应的键与对应的值。</p>
 <p> 既然Entry表示了一对键和值，那么也同样提供了获取对应键和对应值得方法：</p>
 <ul>
@@ -967,7 +974,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Map集合对象 </span></span><br><span class="line">        HashMap&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">        <span class="comment">// 添加元素到集合 </span></span><br><span class="line">        map.put(<span class="string">"胡歌"</span>, <span class="string">"霍建华"</span>);</span><br><span class="line">        map.put(<span class="string">"郭德纲"</span>, <span class="string">"于谦"</span>);</span><br><span class="line">        map.put(<span class="string">"薛之谦"</span>, <span class="string">"大张伟"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取 所有的 entry对象  entrySet</span></span><br><span class="line">        Set&lt;Entry&lt;String,String&gt;&gt; entrySet = map.entrySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历得到每一个entry对象</span></span><br><span class="line">        <span class="keyword">for</span> (Entry&lt;String, String&gt; entry : entrySet) &#123;</span><br><span class="line">           	<span class="comment">// 解析 </span></span><br><span class="line">            String key = entry.getKey();</span><br><span class="line">            String value = entry.getValue();  </span><br><span class="line">            System.out.println(key+<span class="string">"的CP是:"</span>+value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>遍历图解：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162622.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162622.bmp" alt=""></p>
 <blockquote>
 <p>tips：Map集合不能直接使用迭代器或者foreach进行遍历。但是转成Set之后就可以使用了。</p>
 </blockquote>
@@ -1021,51 +1028,51 @@ function activateLightMode(){
 <h2 id="16-2-Debug追踪"><a href="#16-2-Debug追踪" class="headerlink" title="16.2 Debug追踪"></a>16.2 Debug追踪</h2><p><strong>使用IDEA的断点调试功能，查看程序的运行过程</strong></p>
 <ol>
 <li><p>在有效代码行，点击行号右边的空白区域，设置断点，程序执行到断点将停止，我们可以手动来运行程序     </p>
-<p>   <img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161644.png" alt=""></p>
+<p>   <img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161644.png" alt=""></p>
 </li>
-<li><p>点击Debug运行模式       <img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161710.png" alt="">                                                                                                                                                                      </p>
+<li><p>点击Debug运行模式       <img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161710.png" alt="">                                                                                                                                                                      </p>
 </li>
 <li><p>程序停止在断点上不再执行，而IDEA最下方打开了Debug调试窗口  </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161730.png" alt="">)<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161747.png" alt=""></p>
+<p> <img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161730.png" alt="">)<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161747.png" alt=""></p>
 </li>
 <li><p>Debug调试窗口介绍</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161803.png" alt=""></p>
+<p> <img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161803.png" alt=""></p>
 </li>
 <li><p>快捷键F8，代码向下执行一行,第九行执行完毕，执行到第10行（第10行还未执行）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161836.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161836.png" alt=""></p>
 </li>
 <li><p>切换到控制台面板，控制台显示 请录入一个字符串： 并且等待键盘录入</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161900.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161900.png" alt=""></p>
 </li>
 <li><p>快捷键F8，程序继续向后执行，执行键盘录入操作，在控制台录入数据 ababcea</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161925.png" alt=""></p>
-<p>回车之后效果：<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161958.png" alt=""></p>
-<p>调试界面效果：<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162018.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161925.png" alt=""></p>
+<p>回车之后效果：<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216161958.png" alt=""></p>
+<p>调试界面效果：<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162018.png" alt=""></p>
 </li>
 <li><p>此时到达findChar方法，快捷键F7，进入方法findChar</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162112.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162112.png" alt=""></p>
 </li>
 <li><p>快捷键F8 接续执行，创建了map对象，变量区域显示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162127.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162127.png" alt=""></p>
 </li>
 <li><p>快捷键F8 接续执行，进入到循环中，循环变量i为 0,F8再继续执行，就获取到变量c赋值为字符‘a’ 字节值97</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162156.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162156.png" alt=""></p>
 </li>
 <li><p>快捷键F8 接续执行，进入到判断语句中，因为该字符 不在Map集合键集中，再按F8执行，进入该判断中</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162307.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162307.png" alt=""></p>
 </li>
 <li><p>快捷键F8 接续执行，循环结束，进入下次循环，此时map中已经添加一对儿元素</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162325.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162325.png" alt=""></p>
 </li>
 <li><p>快捷键F8 接续执行，进入下次循环，再继续上面的操作，我们就可以看到代码每次是如何执行的了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162342.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162342.png" alt=""></p>
 </li>
 <li><p>如果不想继续debug,那么可以使用快捷键F9,程序正常执行到结束，程序结果在控制台显示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162359.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162359.png" alt=""></p>
 </li>
 </ol>
 <h1 id="第十六章-模拟斗地主洗牌发牌"><a href="#第十六章-模拟斗地主洗牌发牌" class="headerlink" title="第十六章  模拟斗地主洗牌发牌"></a>第十六章  模拟斗地主洗牌发牌</h1><h2 id="16-1-案例介绍"><a href="#16-1-案例介绍" class="headerlink" title="16.1 案例介绍"></a>16.1 案例介绍</h2><p>按照斗地主的规则，完成洗牌发牌的动作。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162435.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162435.png" alt=""></p>
 <p>具体规则：</p>
 <ol>
 <li>组装54张扑克牌将</li>
@@ -1096,7 +1103,7 @@ function activateLightMode(){
 </ol>
 <p>通过Map集合找到对应字符展示。</p>
 <p>通过查询纸牌与数字的对应关系，由数字转成纸牌字符串再进行展示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162506.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191216162506.png" alt=""></p>
 <h2 id="3-3-实现代码步骤"><a href="#3-3-实现代码步骤" class="headerlink" title="3.3  实现代码步骤"></a>3.3  实现代码步骤</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Poker</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 1组装54张扑克牌</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 1.1 创建Map集合存储</span></span><br><span class="line">        HashMap&lt;Integer, String&gt; pokerMap = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</span><br><span class="line">        <span class="comment">// 1.2 创建 花色集合 与 数字集合</span></span><br><span class="line">        ArrayList&lt;String&gt; colors = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; numbers = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 1.3 存储 花色 与数字</span></span><br><span class="line">        Collections.addAll(colors, <span class="string">"♦"</span>, <span class="string">"♣"</span>, <span class="string">"♥"</span>, <span class="string">"♠"</span>);</span><br><span class="line">        Collections.addAll(numbers, <span class="string">"2"</span>, <span class="string">"A"</span>, <span class="string">"K"</span>, <span class="string">"Q"</span>, <span class="string">"J"</span>, <span class="string">"10"</span>, <span class="string">"9"</span>, <span class="string">"8"</span>, <span class="string">"7"</span>, <span class="string">"6"</span>, <span class="string">"5"</span>, <span class="string">"4"</span>, <span class="string">"3"</span>);</span><br><span class="line">        <span class="comment">// 设置 存储编号变量</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        pokerMap.put(count++, <span class="string">"大王"</span>);</span><br><span class="line">        pokerMap.put(count++, <span class="string">"小王"</span>);</span><br><span class="line">        <span class="comment">// 1.4 创建牌 存储到map集合中</span></span><br><span class="line">        <span class="keyword">for</span> (String number : numbers) &#123;</span><br><span class="line">            <span class="keyword">for</span> (String color : colors) &#123;</span><br><span class="line">                String card = color + number;</span><br><span class="line">                pokerMap.put(count++, card);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 2 将54张牌顺序打乱</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 取出编号 集合</span></span><br><span class="line">        Set&lt;Integer&gt; numberSet = pokerMap.keySet();</span><br><span class="line">        <span class="comment">// 因为要将编号打乱顺序 所以 应该先进行转换到 list集合中</span></span><br><span class="line">        ArrayList&lt;Integer&gt; numberList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        numberList.addAll(numberSet);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 打乱顺序</span></span><br><span class="line">        Collections.shuffle(numberList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3 完成三个玩家交替摸牌，每人17张牌，最后三张留作底牌</span></span><br><span class="line">        <span class="comment">// 3.1 发牌的编号</span></span><br><span class="line">        <span class="comment">// 创建三个玩家编号集合 和一个 底牌编号集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; noP1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        ArrayList&lt;Integer&gt; noP2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        ArrayList&lt;Integer&gt; noP3 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        ArrayList&lt;Integer&gt; dipaiNo = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.2发牌的编号</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numberList.size(); i++) &#123;</span><br><span class="line">            <span class="comment">// 获取该编号</span></span><br><span class="line">            Integer no = numberList.get(i);</span><br><span class="line">            <span class="comment">// 发牌</span></span><br><span class="line">            <span class="comment">// 留出底牌</span></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= <span class="number">51</span>) &#123;</span><br><span class="line">                dipaiNo.add(no);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                    noP1.add(no);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                    noP2.add(no);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    noP3.add(no);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4 查看三人各自手中的牌（按照牌的大小排序）、底牌</span></span><br><span class="line">        <span class="comment">// 4.1 对手中编号进行排序</span></span><br><span class="line">        Collections.sort(noP1);</span><br><span class="line">        Collections.sort(noP2);</span><br><span class="line">        Collections.sort(noP3);</span><br><span class="line">        Collections.sort(dipaiNo);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4.2 进行牌面的转换</span></span><br><span class="line">        <span class="comment">// 创建三个玩家牌面集合 以及底牌牌面集合</span></span><br><span class="line">        ArrayList&lt;String&gt; player1 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; player2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; player3 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; dipai = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4.3转换</span></span><br><span class="line">        <span class="keyword">for</span> (Integer i : noP1) &#123;</span><br><span class="line">            <span class="comment">// 4.4 根据编号找到 牌面 pokerMap</span></span><br><span class="line">            String card = pokerMap.get(i);</span><br><span class="line">            <span class="comment">// 添加到对应的 牌面集合中</span></span><br><span class="line">            player1.add(card);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Integer i : noP2) &#123;</span><br><span class="line">            String card = pokerMap.get(i);</span><br><span class="line">            player2.add(card);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Integer i : noP3) &#123;</span><br><span class="line">            String card = pokerMap.get(i);</span><br><span class="line">            player3.add(card);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Integer i : dipaiNo) &#123;</span><br><span class="line">            String card = pokerMap.get(i);</span><br><span class="line">            dipai.add(card);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.5 查看</span></span><br><span class="line">        System.out.println(<span class="string">"令狐冲："</span>+player1);</span><br><span class="line">        System.out.println(<span class="string">"石破天："</span>+player2);</span><br><span class="line">        System.out.println(<span class="string">"鸠摩智："</span>+player3);</span><br><span class="line">        System.out.println(<span class="string">"底牌："</span>+dipai);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -1110,7 +1117,7 @@ function activateLightMode(){
 <p>异常指的并不是语法错误,语法错了,编译不通过,不会产生字节码文件,根本不能运行.</p>
 </blockquote>
 <h2 id="2-异常体系"><a href="#2-异常体系" class="headerlink" title="2.异常体系"></a>2.异常体系</h2><p>异常机制其实是帮助我们<strong>找到</strong>程序中的问题，异常的根类是<code>java.lang.Throwable</code>，其下有两个子类：<code>java.lang.Error</code>与<code>java.lang.Exception</code>，平常所说的异常指<code>java.lang.Exception</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095718.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095718.png" alt=""></p>
 <p><strong>Throwable体系：</strong></p>
 <ul>
 <li><strong>Error</strong>:严重错误Error，无法通过处理的错误，只能事先避免，好比绝症。</li>
@@ -1128,14 +1135,14 @@ function activateLightMode(){
 </li>
 </ul>
 <p><strong>出现异常,不要紧张,把异常的简单类名,拷贝到API中去查。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095741.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095741.bmp" alt=""></p>
 <h2 id="3-异常分类"><a href="#3-异常分类" class="headerlink" title="3.异常分类"></a>3.异常分类</h2><p>我们平常说的异常就是指<code>Exception</code>，因为这类异常一旦出现，我们就要对代码进行更正，修复程序。</p>
 <p><strong>异常(Exception)的分类</strong>:根据在编译时期还是运行时期去检查异常?</p>
 <ul>
 <li><strong>编译时期异常</strong>:  checked异常。在编译时期,就会检查,如果没有处理异常,则编译失败。(如日期格式化异常)</li>
 <li><strong>运行时期异常</strong>:  runtime异常。在运行时期,检查异常.在编译时期,运行异常不会编译器检测(不报错)。(如数学异常)</li>
 </ul>
-<p>​<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095809.png" alt=""></p>
+<p>​<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095809.png" alt=""></p>
 <h2 id="4-异常的产生过程解析"><a href="#4-异常的产生过程解析" class="headerlink" title="4.异常的产生过程解析"></a>4.异常的产生过程解析</h2><p>先运行下面的程序，程序会产生一个数组索引越界异常ArrayIndexOfBoundsException。我们通过图解来解析下异常产生的过程。</p>
 <p> 工具类</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayTools</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 对给定的数组通过给定的角标获取元素。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getElement</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> element = arr[index];</span><br><span class="line">        <span class="keyword">return</span> element;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1144,7 +1151,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123; <span class="number">34</span>, <span class="number">12</span>, <span class="number">67</span> &#125;;</span><br><span class="line">        intnum = ArrayTools.getElement(arr, <span class="number">4</span>)</span><br><span class="line">        System.out.println(<span class="string">"num="</span> + num);</span><br><span class="line">        System.out.println(<span class="string">"over"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上述程序执行过程图解：</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095835.png" alt=""></p>
+<p> <img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095835.png" alt=""></p>
 <h1 id="第十八章-异常的处理"><a href="#第十八章-异常的处理" class="headerlink" title="第十八章 异常的处理"></a>第十八章 异常的处理</h1><p>Java异常处理的五个关键字：<strong>try、catch、finally、throw、throws</strong></p>
 <h2 id="1-抛出异常throw"><a href="#1-抛出异常throw" class="headerlink" title="1.抛出异常throw"></a>1.抛出异常throw</h2><p>在编写程序时，我们必须要考虑程序出现问题的情况。比如，在定义方法时，方法需要接受参数。那么，当调用方法使用接受到的参数时，首先需要先对参数数据进行合法的判断，数据若不合法，就应该告诉调用者，传递合法的数据进来。这时需要使用<strong>抛出异常</strong>的方式来告诉调用者。</p>
 <p>在java中，提供了一个<strong>throw</strong>关键字，它用来抛出一个指定的异常对象。那么，抛出一个异常具体如何操作呢？</p>
@@ -1224,7 +1231,7 @@ function activateLightMode(){
 <blockquote>
 <p>当只有在try或者catch中调用退出JVM的相关方法,此时finally才不会执行,否则finally永远会执行。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095905.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095905.bmp" alt=""></p>
 <h2 id="6-异常注意事项"><a href="#6-异常注意事项" class="headerlink" title="6.异常注意事项"></a>6.异常注意事项</h2><ul>
 <li><p>多个异常使用捕获又该如何处理呢？</p>
 <ol>
@@ -1272,7 +1279,7 @@ function activateLightMode(){
 <li><strong>并发</strong>：指两个或多个事件在<strong>同一个时间段内</strong>发生。</li>
 <li><strong>并行</strong>：指两个或多个事件在<strong>同一时刻</strong>发生（同时发生）。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095954.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217095954.bmp" alt=""></p>
 <p>在操作系统中，安装了多个程序，<strong>并发</strong>指的是在一段时间内宏观上有多个程序同时运行，这在单 CPU 系统中，每一时刻只能有一道程序执行，即微观上这些程序是分时的交替运行，只不过是给人的感觉是同时运行，那是因为<strong>分时交替运行的时间是非常短的</strong>。</p>
 <p>而在多个 CPU 系统中，则这些可以并发执行的程序便可以分配到多个处理器上（CPU），实现多任务<strong>并行</strong>执行，即利用每个处理器来处理一个可以并发执行的程序，这样多个程序便可以同时执行。目前电脑市场上说的多核 CPU，便是多核处理器，<strong>核越多，并行处理的程序越多</strong>，能大大的提高电脑运行的效率。</p>
 <blockquote>
@@ -1287,9 +1294,9 @@ function activateLightMode(){
 </ul>
 <p>我们可以再电脑底部任务栏，右键—–&gt;打开任务管理器,可以查看当前任务的进程：</p>
 <p><strong>进程</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100023.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100023.png" alt=""></p>
 <p><strong>线程</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100042.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100042.png" alt=""></p>
 <p><strong>线程调度:</strong></p>
 <ul>
 <li><p>分时调度</p>
@@ -1300,12 +1307,12 @@ function activateLightMode(){
 <ul>
 <li>设置线程的优先级</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100102.bmp" alt="设置线程优先级"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100102.bmp" alt="设置线程优先级"></p>
 <ul>
 <li><p>抢占式调度详解</p>
 <p>大部分操作系统都支持多进程并发运行，现在的操作系统几乎都支持同时运行多个程序。比如：现在我们上课一边使用编辑器，一边使用录屏软件，同时还开着画图板，dos窗口等软件。此时，这些程序是在同时运行，<strong>感觉这些软件好像在同一时刻运行着</strong>。</p>
 <p>实际上，CPU(中央处理器)使用抢占式调度模式在多个线程间进行着高速的切换。对于CPU的一个核而言，某个时刻，只能执行一个线程，而 CPU的在多个线程间切换速度相对我们的感觉要快，看上去就是在同一时刻运行。<br>其实，<strong>多线程程序并不能提高程序的运行速度，但能够提高程序运行效率，让CPU的使用率更高。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100134.bmp" alt="抢占式调度"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191217100134.bmp" alt="抢占式调度"></p>
 </li>
 </ul>
 </li>
@@ -1325,9 +1332,9 @@ function activateLightMode(){
 
 
 
-<p>流程图:<br><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218110530.png" alt=""></p>
+<p>流程图:<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218110530.png" alt=""></p>
 <p>程序启动运行<code>main</code>时候，java虚拟机启动一个<strong>进程</strong>，<strong>主线程</strong><code>main</code>在<code>main()</code>调用时候被创建。随着调用<code>mt</code>的对象的<code>start</code>方法，另外一个新的线程也启动了，这样，整个应用就在多线程下运行。<br>通过这张图我们可以很清晰的看到多线程的执行流程，那么为什么可以完成<strong>并发</strong>执行呢？我们再来讲一讲原理。<br>多线程执行时，到底在内存中是如何运行的呢？以上个程序为例，进行图解说明：<br>多线程执行时，在栈内存中，其实<strong>每一个执行线程都有一片自己所属的栈内存空间</strong>。进行方法的<strong>压栈和弹栈</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218110841.png" alt=""><br>当执行线程的任务结束了，线程自动在栈内存中释放了。但是当所有的执行线程都结束了，那么进程就结束了。</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218110841.png" alt=""><br>当执行线程的任务结束了，线程自动在栈内存中释放了。但是当所有的执行线程都结束了，那么进程就结束了。</p>
 <h2 id="4-Thread类"><a href="#4-Thread类" class="headerlink" title="4.Thread类"></a>4.Thread类</h2><p>在上一章节已经可以完成最基本的线程开启，那么在我们完成操作过程中用到了 <code>java.lang.Thread</code> 类，<br>API中该类中定义了有关线程的一些方法，具体如下：<br><strong>构造方法：</strong></p>
 <ul>
 <li><code>public Thread()</code> :分配一个新的线程对象。</li>
@@ -1378,7 +1385,7 @@ function activateLightMode(){
 <p><strong><font size="3">测试类:</font></strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建线程任务对象</span></span><br><span class="line">        Ticket ticket = <span class="keyword">new</span> Ticket();</span><br><span class="line">        <span class="comment">//创建三个窗口对象</span></span><br><span class="line">        Thread t1 = <span class="keyword">new</span> Thread(ticket, <span class="string">"窗口1"</span>);</span><br><span class="line">        Thread t2 = <span class="keyword">new</span> Thread(ticket, <span class="string">"窗口2"</span>);</span><br><span class="line">        Thread t3 = <span class="keyword">new</span> Thread(ticket, <span class="string">"窗口3"</span>);</span><br><span class="line">        <span class="comment">//同时卖票</span></span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">        t3.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>结果中有一部分这样现象：<br><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218162618.png" alt=""></p>
+<p>结果中有一部分这样现象：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218162618.png" alt=""></p>
 <p>发现程序出现了两个问题：</p>
 <ol>
 <li>相同的票数,比如5这张票被卖了两回。</li>
@@ -1473,22 +1480,22 @@ function activateLightMode(){
 <blockquote>
 <p>小提示：sleep()中指定的时间是线程不会运行的最短时间。因此，sleep()方法不能保证该线程睡眠到期后就开始立刻执行。</p>
 </blockquote>
-<p>Timed Waiting 线程状态图：<br><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218164843.png" alt=""></p>
+<p>Timed Waiting 线程状态图：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218164843.png" alt=""></p>
 <h2 id="3-BLOCKED（锁阻塞）"><a href="#3-BLOCKED（锁阻塞）" class="headerlink" title="3.BLOCKED（锁阻塞）"></a>3.BLOCKED（锁阻塞）</h2><p><code>Blocked</code>状态在API中的介绍为：一个正在阻塞等待一个监视器锁（锁对象）的线程处于这一状态。<br>我们已经学完同步机制，那么这个状态是非常好理解的了。比如，线程A与线程B代码中使用同一锁，如果线程A获取到锁，线程A进入到<code>Runnable</code>状态，那么线程B就进入到<code>Blocked</code>锁阻塞状态。<br>这是由<code>Runnable</code>状态进入<code>Blocked</code>状态。除此<code>Waiting</code>以及<code>Time Waiting</code>状态也会在某种情况下进入阻塞状态。</p>
-<p>Blocked 线程状态图:<br><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218165002.png" alt=""></p>
+<p>Blocked 线程状态图:<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218165002.png" alt=""></p>
 <h2 id="4-Waiting（无限等待）"><a href="#4-Waiting（无限等待）" class="headerlink" title="4.Waiting（无限等待）"></a>4.Waiting（无限等待）</h2><p><code>Wating</code>状态在API中介绍为：一个正在无限期等待另一个线程执行一个特别的（唤醒）动作的线程处于这一状态。<br>我们通过一段代码来学习一下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WaitingTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object obj = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 演示waiting</span></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                    <span class="keyword">synchronized</span> (obj) &#123;</span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            System.out.println(Thread.currentThread().getName() + </span><br><span class="line">                            <span class="string">"=== 获取到锁对象，调用wait方法，进入waiting状态，释放锁对象"</span>);</span><br><span class="line">                            obj.wait(); <span class="comment">//无限等待</span></span><br><span class="line">                            <span class="comment">//obj.wait(5000); //计时等待, 5秒 时间到，自动醒来</span></span><br><span class="line">                        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        System.out.println(Thread.currentThread().getName() + </span><br><span class="line">                        <span class="string">"=== 从waiting状态醒来，获取到锁对象，继续执行了"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="string">"等待线程"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">// while (true)&#123; //每隔3秒 唤醒一次</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"‐‐‐‐‐ 等待3秒钟"</span>);</span><br><span class="line">                    Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">synchronized</span> (obj) &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + </span><br><span class="line">                    <span class="string">"‐‐‐‐‐ 获取到锁对象, 调用notify方法，释放锁对象"</span>);</span><br><span class="line">                    obj.notify();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">        &#125;, <span class="string">"唤醒线程"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>通过上述案例我们会发现，一个调用了某个对象的 <code>Object.wait</code> 方法的线程会<strong>等待另一个线程</strong>调用此对象的<code>Object.notify()</code>方法 或 <code>Object.notifyAll()</code>方法。<br>其实<code>waiting</code>状态并不是一个线程的操作，它体现的是多个线程间的通信，可以理解为多个线程之间的协作关系，多个线程会争取锁，同时相互之间又存在协作关系。就好比在公司里你和你的同事们，你们可能存在晋升时的竞争，但更多时候你们更多是一起合作以完成某些任务。</p>
 <p>当多个线程协作时，比如<code>A，B</code>线程，如果<code>A</code>线程在<code>Runnable（可运行）</code>状态中调用了<code>wait()</code>方法那么A线程就进入了<code>Waiting（无限等待）</code>状态，同时<strong>失去了同步锁</strong>。假如这个时候<code>B</code>线程获取到了同步锁，在运行状态中调用了<code>notify()</code>方法，那么就会<strong>将无限等待</strong>的<code>A线程</code><strong>唤醒</strong>。<strong>注意</strong>是唤醒，如果获取到锁对象，那么A线程唤醒后就进入<code>Runnable（可运行）</code>状态；如果没有获取锁对象，那么就进入到<code>Blocked（锁阻塞状态）</code>。</p>
-<p>Waiting 线程状态图:<br><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218165323.png" alt=""></p>
-<h2 id="5-补充知识点"><a href="#5-补充知识点" class="headerlink" title="5.补充知识点"></a>5.补充知识点</h2><p>到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图：<br><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218165427.png" alt=""></p>
+<p>Waiting 线程状态图:<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218165323.png" alt=""></p>
+<h2 id="5-补充知识点"><a href="#5-补充知识点" class="headerlink" title="5.补充知识点"></a>5.补充知识点</h2><p>到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图：<br><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218165427.png" alt=""></p>
 <blockquote>
 <p>一条有意思的tips:<br>我们在翻阅API的时候会发现Timed Waiting（计时等待） 与 Waiting（无限等待） 状态联系还是很紧密的，比如Waiting（无限等待） 状态中wait方法是空参的，而timed waiting（计时等待） 中wait方法是带参的。这种带参的方法，其实是一种倒计时操作，相当于我们生活中的小闹钟，我们设定好时间，到时通知，可是如果提前得到（唤醒）通知，那么设定好时间在通知也就显得多此一举了，那么这种设计方案其实是一举两得。如果没有得到（唤醒）通知，那么线程就处于Timed Waiting状态,直到倒计时完毕自动醒来；如果在倒计时期间得到（唤醒）通知，那么线程从Timed Waiting状态立刻唤醒。</p>
 </blockquote>
 <h1 id="第二十三章-等待唤醒机制"><a href="#第二十三章-等待唤醒机制" class="headerlink" title="第二十三章 等待唤醒机制"></a>第二十三章 等待唤醒机制</h1><h2 id="1-线程间通信"><a href="#1-线程间通信" class="headerlink" title="1.线程间通信"></a>1.线程间通信</h2><p><strong>概念：</strong>多个线程在处理同一个资源，但是处理的动作（线程的任务）却不相同。</p>
 <p>比如：线程A用来生成包子的，线程B用来吃包子的，包子可以理解为同一资源，线程A与线程B处理的动作，一个是生产，一个是消费，那么线程A与线程B之间就存在线程通信问题。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170046.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170046.bmp" alt=""></p>
 <p><strong>为什么要处理线程间通信：</strong></p>
 <p>多个线程并发执行时, 在默认情况下CPU是随机切换线程的，当我们需要多个线程来共同完成一件任务，并且我们希望他们有规律的执行, 那么多线程之间需要一些协调通信，以此来帮我们达到多线程共同操作一份数据。</p>
 <p><strong>如何保证线程间通信有效利用资源：</strong></p>
@@ -1537,7 +1544,7 @@ function activateLightMode(){
 <p>执行效果：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">包子铺开始做包子</span><br><span class="line">包子造好了：冰皮五仁</span><br><span class="line">吃货来吃吧</span><br><span class="line">吃货正在吃冰皮五仁包子</span><br><span class="line">包子铺开始做包子</span><br><span class="line">包子造好了：薄皮牛肉大葱</span><br><span class="line">吃货来吃吧</span><br><span class="line">吃货正在吃薄皮牛肉大葱包子</span><br><span class="line">包子铺开始做包子</span><br><span class="line">包子造好了：冰皮五仁</span><br><span class="line">吃货来吃吧</span><br><span class="line">吃货正在吃冰皮五仁包子</span><br></pre></td></tr></table></figure>
 
-<h1 id="第二十四章-线程池"><a href="#第二十四章-线程池" class="headerlink" title="第二十四章 线程池"></a>第二十四章 线程池</h1><h2 id="1-线程池思想概述"><a href="#1-线程池思想概述" class="headerlink" title="1.线程池思想概述"></a>1.线程池思想概述</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170142.jpg" alt=""></p>
+<h1 id="第二十四章-线程池"><a href="#第二十四章-线程池" class="headerlink" title="第二十四章 线程池"></a>第二十四章 线程池</h1><h2 id="1-线程池思想概述"><a href="#1-线程池思想概述" class="headerlink" title="1.线程池思想概述"></a>1.线程池思想概述</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170142.jpg" alt=""></p>
 <p>我们使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：</p>
 <p>如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。</p>
 <p>那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？</p>
@@ -1546,7 +1553,7 @@ function activateLightMode(){
 <li><strong>线程池：</strong>其实就是一个容纳多个线程的容器，其中的线程可以反复使用，省去了频繁创建线程对象的操作，无需反复创建线程而消耗过多资源。</li>
 </ul>
 <p>由于线程池中有很多操作都是与优化资源相关的，我们在这里就不多赘述。我们通过一张图来了解线程池的工作原理：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170205.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170205.bmp" alt=""></p>
 <p>合理利用线程池能够带来三个好处：</p>
 <ol>
 <li>降低资源消耗。减少了创建和销毁线程的次数，每个工作线程都可以被重复利用，可执行多个任务。</li>
@@ -1581,7 +1588,7 @@ function activateLightMode(){
 
 
 
-<h1 id="第二十五章-Lambda表达式"><a href="#第二十五章-Lambda表达式" class="headerlink" title="第二十五章 Lambda表达式"></a>第二十五章 Lambda表达式</h1><h2 id="1-函数式编程思想概述"><a href="#1-函数式编程思想概述" class="headerlink" title="1.函数式编程思想概述"></a>1.函数式编程思想概述</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170337.png" alt=""></p>
+<h1 id="第二十五章-Lambda表达式"><a href="#第二十五章-Lambda表达式" class="headerlink" title="第二十五章 Lambda表达式"></a>第二十五章 Lambda表达式</h1><h2 id="1-函数式编程思想概述"><a href="#1-函数式编程思想概述" class="headerlink" title="1.函数式编程思想概述"></a>1.函数式编程思想概述</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170337.png" alt=""></p>
 <p>在数学中，<strong>函数</strong>就是有<strong>输入量</strong>、<strong>输出量</strong>的一套计算方案，也就是<strong>拿什么东西做什么事情</strong>。<br>相对而言，<strong>面向对象</strong>过分强调<strong>必须通过对象的形式来做事情</strong>。<br><strong>函数式思想</strong>则尽量忽略面向对象的复杂语法——<strong>强调做什么，而不是以什么形式做</strong>。</p>
 <p>面向对象的思想:</p>
 <p>​    做一件事情,找一个能解决这个事情的对象,调用对象的方法,完成事情.</p>
@@ -1605,9 +1612,9 @@ function activateLightMode(){
 <p>我们真的希望创建一个<strong>匿名内部类</strong>对象吗？不。我们只是为了做这件事情而<strong>不得不</strong>创建一个对象。我们真正希望做的事情是：将<code>run</code>方法体内的代码传递给<code>Thread</code>类知晓。</p>
 <p><strong>传递一段代码</strong>——这才是我们真正的目的。而<strong>创建对象</strong>只是<strong>受限于面向对象语法</strong>而<strong>不得不</strong>采取的一种手段方式。那，有没有更加简单的办法？如果我们将关注点从<strong>怎么做</strong>回归到<strong>做什么</strong>的本质上，就会发现只要能够更好地达到目的，过程与形式其实并不重要。</p>
 <p><strong><font size="3">生活举例:</font></strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170403.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170403.png" alt=""></p>
 <p>当我们需要从北京到上海时，可以选择高铁、汽车、骑行或是徒步。我们的真正目的是到达上海，而如何才能到达上海的形式并不重要，所以我们一直在探索有没有比高铁更好的方式——搭乘飞机。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170419.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218170419.png" alt=""></p>
 <p>而现在这种飞机（甚至是飞船）已经诞生：2014年3月Oracle所发布的Java 8（JDK 1.8）中，加入了<strong>Lambda表达式</strong>的重量级新特性，为我们打开了新世界的大门。</p>
 <h2 id="4-体验Lambda的更优写法"><a href="#4-体验Lambda的更优写法" class="headerlink" title="4.体验Lambda的更优写法"></a>4.体验Lambda的更优写法</h2><p>借助Java 8的全新语法，上述<code>Runnable</code>接口的匿名内部类写法可以通过更简单的Lambda表达式达到等效：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02LambdaRunnable</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">"多线程任务执行！"</span>)).start(); <span class="comment">// 启动线程</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1839,7 +1846,7 @@ function activateLightMode(){
 <p><strong>实现代码</strong>：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DiGuiDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//计算1~num的和，使用递归完成</span></span><br><span class="line">		<span class="keyword">int</span> num = <span class="number">5</span>;</span><br><span class="line">      	<span class="comment">// 调用求和的方法</span></span><br><span class="line">		<span class="keyword">int</span> sum = getSum(num);</span><br><span class="line">      	<span class="comment">// 输出结果</span></span><br><span class="line">		System.out.println(sum);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">  	<span class="comment">/*</span></span><br><span class="line"><span class="comment">  	  通过递归算法实现.</span></span><br><span class="line"><span class="comment">  	  参数列表:int </span></span><br><span class="line"><span class="comment">  	  返回值类型: int </span></span><br><span class="line"><span class="comment">  	*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">      	<span class="comment">/* </span></span><br><span class="line"><span class="comment">      	   num为1时,方法返回1,</span></span><br><span class="line"><span class="comment">      	   相当于是方法的出口,num总有是1的情况</span></span><br><span class="line"><span class="comment">      	*/</span></span><br><span class="line">		<span class="keyword">if</span>(num == <span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="comment">/*</span></span><br><span class="line"><span class="comment">          num不为1时,方法返回 num +(num-1)的累和</span></span><br><span class="line"><span class="comment">          递归调用getSum方法</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">		<span class="keyword">return</span> num + getSum(num-<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="代码执行图解"><a href="#代码执行图解" class="headerlink" title="代码执行图解"></a>代码执行图解</h3><p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218171151.jpg" alt=""></p>
+<h3 id="代码执行图解"><a href="#代码执行图解" class="headerlink" title="代码执行图解"></a>代码执行图解</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218171151.jpg" alt=""></p>
 <blockquote>
 <p>小贴士：递归一定要有条件限定，保证递归能够停止下来，次数不要太多，否则会发生栈内存溢出。</p>
 </blockquote>
@@ -1905,7 +1912,7 @@ function activateLightMode(){
 <li><strong>字节流</strong> ：以字节为单位，读写数据的流。</li>
 <li><strong>字符流</strong> ：以字符为单位，读写数据的流。</li>
 </ul>
-<h2 id="29-3-IO的流向说明图解"><a href="#29-3-IO的流向说明图解" class="headerlink" title="29.3 IO的流向说明图解"></a>29.3 IO的流向说明图解</h2><p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218171432.jpg" alt=""></p>
+<h2 id="29-3-IO的流向说明图解"><a href="#29-3-IO的流向说明图解" class="headerlink" title="29.3 IO的流向说明图解"></a>29.3 IO的流向说明图解</h2><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218171432.jpg" alt=""></p>
 <h2 id="1-4-顶级父类们"><a href="#1-4-顶级父类们" class="headerlink" title="1.4 顶级父类们"></a>1.4 顶级父类们</h2><table>
 <thead>
 <tr>
@@ -2047,7 +2054,7 @@ function activateLightMode(){
 <p>小贴士：</p>
 <p>使用数组读取，每次读取多个字节，减少了系统间的IO操作次数，从而提高了读写的效率，建议开发中使用。</p>
 </blockquote>
-<h2 id="30-6-字节流练习：图片复制"><a href="#30-6-字节流练习：图片复制" class="headerlink" title="30.6 字节流练习：图片复制"></a>30.6 字节流练习：图片复制</h2><h3 id="复制原理图解"><a href="#复制原理图解" class="headerlink" title="复制原理图解"></a>复制原理图解</h3><p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218171516.jpg" alt=""></p>
+<h2 id="30-6-字节流练习：图片复制"><a href="#30-6-字节流练习：图片复制" class="headerlink" title="30.6 字节流练习：图片复制"></a>30.6 字节流练习：图片复制</h2><h3 id="复制原理图解"><a href="#复制原理图解" class="headerlink" title="复制原理图解"></a>复制原理图解</h3><p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191218171516.jpg" alt=""></p>
 <h3 id="案例实现"><a href="#案例实现" class="headerlink" title="案例实现"></a>案例实现</h3><p>复制图片文件，代码使用演示：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Copy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 1.创建流对象</span></span><br><span class="line">        <span class="comment">// 1.1 指定数据源</span></span><br><span class="line">        FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"D:\\test.jpg"</span>);</span><br><span class="line">        <span class="comment">// 1.2 指定目的地</span></span><br><span class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">"test_copy.jpg"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2.读写数据</span></span><br><span class="line">        <span class="comment">// 2.1 定义数组</span></span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="comment">// 2.2 定义长度</span></span><br><span class="line">        <span class="keyword">int</span> len;</span><br><span class="line">        <span class="comment">// 2.3 循环读取</span></span><br><span class="line">        <span class="keyword">while</span> ((len = fis.read(b))!=-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// 2.4 写出数据</span></span><br><span class="line">            fos.write(b, <span class="number">0</span> , len);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.关闭资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2285,7 +2292,7 @@ function activateLightMode(){
 <ul>
 <li><strong>字符集 <code>Charset</code></strong>：也叫编码表。是一个系统支持的所有字符的集合，包括各国家文字、标点符号、图形符号、数字等。</li>
 </ul>
-<p>计算机要准确的存储和识别各种字符集符号，需要进行字符编码，一套字符集必然至少有一套字符编码。常见字符集有ASCII字符集、GBK字符集、Unicode字符集等。<img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223105656.jpg" alt=""></p>
+<p>计算机要准确的存储和识别各种字符集符号，需要进行字符编码，一套字符集必然至少有一套字符编码。常见字符集有ASCII字符集、GBK字符集、Unicode字符集等。<img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223105656.jpg" alt=""></p>
 <p>可见，当指定了<strong>编码</strong>，它所对应的<strong>字符集</strong>自然就指定了，所以<strong>编码</strong>才是我们最终要关心的。</p>
 <ul>
 <li><strong>ASCII字符集</strong> ：<ul>
@@ -2347,7 +2354,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 定义文件路径</span></span><br><span class="line">        String FileName = <span class="string">"E:\\out.txt"</span>;</span><br><span class="line">        <span class="comment">// 创建流对象,默认UTF8编码</span></span><br><span class="line">        OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(FileName));</span><br><span class="line">        <span class="comment">// 写出数据</span></span><br><span class="line">        osw.write(<span class="string">"你好"</span>); <span class="comment">// 保存为6个字节</span></span><br><span class="line">        osw.close();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 定义文件路径</span></span><br><span class="line">        String FileName2 = <span class="string">"E:\\out2.txt"</span>;</span><br><span class="line">        <span class="comment">// 创建流对象,指定GBK编码</span></span><br><span class="line">        OutputStreamWriter osw2 = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(FileName2), <span class="string">"GBK"</span>);</span><br><span class="line">        <span class="comment">// 写出数据</span></span><br><span class="line">        osw2.write(<span class="string">"你好"</span>);<span class="comment">// 保存为4个字节</span></span><br><span class="line">        osw2.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>转换流理解图解</strong></p>
-<p><strong>转换流是字节与字符间的桥梁！</strong><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223105453.jpg" alt=""></p>
+<p><strong>转换流是字节与字符间的桥梁！</strong><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223105453.jpg" alt=""></p>
 <h2 id="35-5-练习：转换文件编码"><a href="#35-5-练习：转换文件编码" class="headerlink" title="35.5 练习：转换文件编码"></a>35.5 练习：转换文件编码</h2><p>将GBK编码的文本文件，转换为UTF-8编码的文本文件。</p>
 <p><strong>案例分析</strong></p>
 <ol>
@@ -2358,7 +2365,7 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransDemo</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;      </span><br><span class="line">    	   <span class="comment">// 1.定义文件路径</span></span><br><span class="line">        String srcFile = <span class="string">"file_gbk.txt"</span>;</span><br><span class="line">        String destFile = <span class="string">"file_utf8.txt"</span>;</span><br><span class="line">        <span class="comment">// 2.创建流对象</span></span><br><span class="line">        <span class="comment">// 2.1 转换输入流,指定GBK编码</span></span><br><span class="line">        InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(<span class="keyword">new</span> FileInputStream(srcFile), <span class="string">"GBK"</span>);</span><br><span class="line">        <span class="comment">// 2.2 转换输出流,默认utf8编码</span></span><br><span class="line">        OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(destFile));</span><br><span class="line">        <span class="comment">// 3.读写数据</span></span><br><span class="line">        <span class="comment">// 3.1 定义数组</span></span><br><span class="line">        <span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="comment">// 3.2 定义长度</span></span><br><span class="line">        <span class="keyword">int</span> len;</span><br><span class="line">        <span class="comment">// 3.3 循环读取</span></span><br><span class="line">        <span class="keyword">while</span> ((len = isr.read(cbuf)) != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// 循环写出</span></span><br><span class="line">            osw.write(cbuf, <span class="number">0</span>, len);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 4.释放资源</span></span><br><span class="line">        osw.close();</span><br><span class="line">        isr.close();</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="第三十六章-序列化"><a href="#第三十六章-序列化" class="headerlink" title="第三十六章 序列化"></a>第三十六章 序列化</h1><h2 id="36-1-概述"><a href="#36-1-概述" class="headerlink" title="36.1 概述"></a>36.1 概述</h2><p>Java 提供了一种对象<strong>序列化</strong>的机制。用一个字节序列可以表示一个对象，该字节序列包含该<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的属性</code>等信息。字节序列写出到文件之后，相当于文件中<strong>持久保存</strong>了一个对象的信息。 </p>
-<p>反之，该字节序列还可以从文件中读取回来，重构对象，对它进行<strong>反序列化</strong>。<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的数据</code>信息，都可以用来在内存中创建对象。看图理解序列化： <img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223105721.jpg" alt=""></p>
+<p>反之，该字节序列还可以从文件中读取回来，重构对象，对它进行<strong>反序列化</strong>。<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的数据</code>信息，都可以用来在内存中创建对象。看图理解序列化： <img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223105721.jpg" alt=""></p>
 <ul>
 <li><strong>序列化</strong>：将对象写入到IO流中</li>
 <li><strong>反序列化</strong>：从IO流中恢复对象</li>
@@ -2458,9 +2465,9 @@ function activateLightMode(){
 <h2 id="38-1软件结构"><a href="#38-1软件结构" class="headerlink" title="38.1软件结构"></a>38.1软件结构</h2><ul>
 <li><strong>C/S结构</strong> ：全称为Client/Server结构，是指客户端和服务器结构。常见程序有ＱＱ、迅雷等软件。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120817.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120817.jpg" alt=""></p>
 <p><strong>B/S结构</strong> ：全称为Browser/Server结构，是指浏览器和服务器结构。常见浏览器有谷歌、火狐等。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120834.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120834.jpg" alt=""></p>
 <p>两种架构各有优势，但是无论哪种架构，都离不开网络的支持。<strong>网络编程</strong>，就是在一定的协议下，实现两台计算机的通信的程序。</p>
 <h2 id="38-2-网络通信协议"><a href="#38-2-网络通信协议" class="headerlink" title="38.2 网络通信协议"></a>38.2 网络通信协议</h2><ul>
 <li><strong>网络通信协议：</strong>通过计算机网络可以使多台计算机实现连接，位于同一个网络中的计算机在进行连接和通信时需要遵守一定的规则，这就好比在道路中行驶的汽车一定要遵守交通规则一样。在计算机网络中，这些连接和通信的规则被称为网络通信协议，它对数据的传输格式、传输速率、传输步骤等做了统一规定，通信双方必须同时遵守才能完成数据交换。</li>
@@ -2468,7 +2475,7 @@ function activateLightMode(){
 <ul>
 <li><strong>TCP/IP协议：</strong> 传输控制协议/因特网互联协议( Transmission Control Protocol/Internet Protocol)，是Internet最基本、最广泛的协议。它定义了计算机如何连入因特网，以及数据如何在它们之间传输的标准。它的内部包含一系列的用于处理数据通信的协议，并采用了4层的分层模型，每一层都呼叫它的下一层所提供的协议来完成自己的需求。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120851.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120851.jpg" alt=""></p>
 <p>上图中，TCP/IP协议中的四层分别是应用层、传输层、网络层和链路层，每层分别负责不同的通信功能。<br>链路层：链路层是用于定义物理传输通道，通常是对某些网络连接设备的驱动协议，例如针对光纤、网线提供的驱动。<br>网络层：网络层是整个TCP/IP协议的核心，它主要用于将传输的数据进行分组，将分组数据发送到目标计算机或者网络。<br>运输层：主要使网络程序进行通信，在进行网络通信时，可以采用TCP协议，也可以采用UDP协议。<br>应用层：主要负责应用程序的协议，例如HTTP协议、FTP协议等。</p>
 <h2 id="38-3-协议分类"><a href="#38-3-协议分类" class="headerlink" title="38.3 协议分类"></a>38.3 协议分类</h2><p>通信的协议还是比较复杂的，<code>java.net</code> 包中包含的类和接口，它们提供低层次的通信细节。我们可以直接使用这些类和接口，来专注于网络程序开发，而不用考虑通信的细节。</p>
 <p><code>java.net</code> 包中提供了两种常见的网络协议的支持：</p>
@@ -2478,7 +2485,7 @@ function activateLightMode(){
 <p>但是在使用UDP协议传送数据时，由于UDP的面向无连接性，不能保证数据的完整性，因此在传输重要数据时不建议使用UDP协议。UDP的交换过程如下图所示。</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120917.bmp" alt="UDP通信图解"></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120917.bmp" alt="UDP通信图解"></p>
 <p>特点:数据被限制在64kb以内，超出这个范围就不能发送了。</p>
 <p>数据报(Datagram):网络传输的基本单位 </p>
 <ul>
@@ -2494,7 +2501,7 @@ function activateLightMode(){
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120953.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223120953.jpg" alt=""></p>
 <p>​    完成三次握手，连接建立后，客户端和服务器就可以开始进行数据传输了。由于这种面向连接的特性，TCP协议可以保证传输数据的安全，所以应用十分广泛，例如下载文件、浏览网页等。</p>
 <h2 id="38-4-网络编程三要素"><a href="#38-4-网络编程三要素" class="headerlink" title="38.4 网络编程三要素"></a>38.4 网络编程三要素</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><ul>
 <li><strong>协议：</strong>计算机网络通信必须遵守的规则，已经介绍过了，不再赘述。</li>
@@ -2594,7 +2601,7 @@ function activateLightMode(){
 <blockquote>
 <p>到此，客户端向服务端发送数据成功。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121048.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121048.jpg" alt=""></p>
 <blockquote>
 <p>自此，服务端向客户端回写数据。</p>
 </blockquote>
@@ -2621,7 +2628,7 @@ function activateLightMode(){
 <li>【服务端】输入流，读取文件数据到服务端程序。</li>
 <li>【服务端】输出流，写出文件数据到服务器硬盘中。</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121215.jpg" alt="">    </p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121215.jpg" alt="">    </p>
 <h4 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h4><p><strong>服务端实现：</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileUpload_Server</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"服务器 启动.....  "</span>);</span><br><span class="line">        <span class="comment">// 1. 创建服务端ServerSocket</span></span><br><span class="line">        ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">6666</span>);</span><br><span class="line">        <span class="comment">// 2. 建立连接 </span></span><br><span class="line">        Socket accept = serverSocket.accept();</span><br><span class="line">        <span class="comment">// 3. 创建流对象</span></span><br><span class="line">        <span class="comment">// 3.1 获取输入流,读取文件数据，使用缓冲流操作文件效率更高</span></span><br><span class="line">        BufferedInputStream bis = <span class="keyword">new</span> BufferedInputStream(accept.getInputStream());</span><br><span class="line">        <span class="comment">// 3.2 创建输出流,保存到本地 .</span></span><br><span class="line">        BufferedOutputStream bos = <span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">"copy.jpg"</span>));</span><br><span class="line">        <span class="comment">// 4. 读写数据</span></span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">8</span>];</span><br><span class="line">        <span class="keyword">int</span> len;</span><br><span class="line">        <span class="keyword">while</span> ((len = bis.read(b)) != -<span class="number">1</span>) &#123;</span><br><span class="line">            bos.write(b, <span class="number">0</span>, len);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//5. 关闭 资源</span></span><br><span class="line">        bos.close();</span><br><span class="line">        bis.close();</span><br><span class="line">        accept.close();</span><br><span class="line">        System.out.println(<span class="string">"文件上传已保存"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2656,7 +2663,7 @@ function activateLightMode(){
 <li>【服务端】获取输出流，回写数据。</li>
 <li>【客户端】获取输入流，解析回写数据。</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121237.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121237.jpg" alt=""></p>
 <h4 id="回写实现"><a href="#回写实现" class="headerlink" title="回写实现"></a>回写实现</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileUpload_Server</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"服务器 启动.....  "</span>);</span><br><span class="line">        <span class="comment">// 1. 创建服务端ServerSocket</span></span><br><span class="line">        ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">6666</span>);</span><br><span class="line">        <span class="comment">// 2. 循环接收,建立连接</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            Socket accept = serverSocket.accept();</span><br><span class="line">          	<span class="comment">/*</span></span><br><span class="line"><span class="comment">          	3. socket对象交给子线程处理,进行读写操作</span></span><br><span class="line"><span class="comment">               Runnable接口中,只有一个run方法,使用lambda表达式简化格式</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">            <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> (</span><br><span class="line">                    <span class="comment">//3.1 获取输入流对象</span></span><br><span class="line">                    BufferedInputStream bis = <span class="keyword">new</span> BufferedInputStream(accept.getInputStream());</span><br><span class="line">                    <span class="comment">//3.2 创建输出流对象, 保存到本地 .</span></span><br><span class="line">                    FileOutputStream fis = <span class="keyword">new</span> FileOutputStream(System.currentTimeMillis() + <span class="string">".jpg"</span>);</span><br><span class="line">                    BufferedOutputStream bos = <span class="keyword">new</span> BufferedOutputStream(fis);</span><br><span class="line">                ) &#123;</span><br><span class="line">                    <span class="comment">// 3.3 读写数据</span></span><br><span class="line">                    <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">8</span>];</span><br><span class="line">                    <span class="keyword">int</span> len;</span><br><span class="line">                    <span class="keyword">while</span> ((len = bis.read(b)) != -<span class="number">1</span>) &#123;</span><br><span class="line">                        bos.write(b, <span class="number">0</span>, len);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 4.=======信息回写===========================</span></span><br><span class="line">                    System.out.println(<span class="string">"back ........"</span>);</span><br><span class="line">                    OutputStream out = accept.getOutputStream();</span><br><span class="line">                    out.write(<span class="string">"上传成功"</span>.getBytes());</span><br><span class="line">                    out.close();</span><br><span class="line">                    <span class="comment">//================================</span></span><br><span class="line"></span><br><span class="line">                    <span class="comment">//5. 关闭 资源</span></span><br><span class="line">                    bos.close();</span><br><span class="line">                    bis.close();</span><br><span class="line">                    accept.close();</span><br><span class="line">                    System.out.println(<span class="string">"文件上传已保存"</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>客户端实现：</strong></p>
@@ -2668,15 +2675,15 @@ function activateLightMode(){
 <h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><ol>
 <li><p>准备页面数据，web文件夹。</p>
 <p>复制到我们Module中，比如复制到day08中</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121329.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121329.png" alt=""></p>
 </li>
 <li><p>我们模拟服务器端，ServerSocket类监听端口，使用浏览器访问</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    	ServerSocket server = <span class="keyword">new</span> ServerSocket(<span class="number">8000</span>);</span><br><span class="line">    	Socket socket = server.accept();</span><br><span class="line">    	InputStream in = socket.getInputStream();</span><br><span class="line">   	    <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    	<span class="keyword">int</span> len = in.read(bytes);</span><br><span class="line">    	System.out.println(<span class="keyword">new</span> String(bytes,<span class="number">0</span>,len));</span><br><span class="line">    	socket.close();</span><br><span class="line">    	server.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121349.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121349.jpg" alt=""></p>
 </li>
 <li><p>服务器程序中字节输入流可以读取到浏览器发来的请求信息</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121404.jpg" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121404.jpg" alt=""></p>
 </li>
 </ol>
 <p>GET/web/index.html HTTP/1.1是浏览器的请求消息。/web/index.html为浏览器想要请求的服务器端的资源,使用字符串切割方式获取到请求的资源。</p>
@@ -2688,7 +2695,7 @@ function activateLightMode(){
 <h3 id="访问效果"><a href="#访问效果" class="headerlink" title="访问效果"></a>访问效果</h3><ul>
 <li><strong>火狐</strong></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121427.png" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121427.png" alt=""></p>
 <blockquote>
 <p>小贴士：不同的浏览器，内核不一样，解析效果有可能不一样。</p>
 </blockquote>
@@ -2697,8 +2704,8 @@ function activateLightMode(){
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServerDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        ServerSocket server = <span class="keyword">new</span> ServerSocket(<span class="number">8888</span>);</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            Socket socket = server.accept();</span><br><span class="line">            <span class="keyword">new</span> Thread(<span class="keyword">new</span> Web(socket)).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Web</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> Socket socket;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Web</span><span class="params">(Socket socket)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.socket=socket;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                <span class="comment">//转换流,读取浏览器请求第一行</span></span><br><span class="line">                BufferedReader readWb = <span class="keyword">new</span></span><br><span class="line">                        BufferedReader(<span class="keyword">new</span> InputStreamReader(socket.getInputStream()));</span><br><span class="line">                String requst = readWb.readLine();</span><br><span class="line">                <span class="comment">//取出请求资源的路径</span></span><br><span class="line">                String[] strArr = requst.split(<span class="string">" "</span>);</span><br><span class="line">                System.out.println(Arrays.toString(strArr));</span><br><span class="line">                String path = strArr[<span class="number">1</span>].substring(<span class="number">1</span>);</span><br><span class="line">                System.out.println(path);</span><br><span class="line"></span><br><span class="line">                FileInputStream fis = <span class="keyword">new</span> FileInputStream(path);</span><br><span class="line">                System.out.println(fis);</span><br><span class="line">                <span class="keyword">byte</span>[] bytes= <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                <span class="keyword">int</span> len = <span class="number">0</span> ;</span><br><span class="line">                <span class="comment">//向浏览器 回写数据</span></span><br><span class="line">                OutputStream out = socket.getOutputStream();</span><br><span class="line">                out.write(<span class="string">"HTTP/1.1 200 OK\r\n"</span>.getBytes());</span><br><span class="line">                out.write(<span class="string">"Content-Type:text/html\r\n"</span>.getBytes());</span><br><span class="line">                out.write(<span class="string">"\r\n"</span>.getBytes());</span><br><span class="line">                <span class="keyword">while</span>((len = fis.read(bytes))!=-<span class="number">1</span>)&#123;</span><br><span class="line">                    out.write(bytes,<span class="number">0</span>,len);</span><br><span class="line">                &#125;</span><br><span class="line">                fis.close();</span><br><span class="line">                out.close();</span><br><span class="line">                readWb.close();</span><br><span class="line">                socket.close();</span><br><span class="line">            &#125;<span class="keyword">catch</span>(Exception ex)&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>访问效果：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121445.png" alt="">图解：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121506.bmp" alt=""></p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121445.png" alt="">图解：</p>
+<p><img src= data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs= data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191223121506.bmp" alt=""></p>
 <h1 id="第四十一章-可变参数"><a href="#第四十一章-可变参数" class="headerlink" title="第四十一章 可变参数"></a>第四十一章 可变参数</h1><p>在<strong>JDK1.5</strong>之后，如果我们定义一个方法需要接受多个参数，并且多个参数类型一致，我们可以对其简化成如下格式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(参数类型... 形参名)&#123;  &#125;</span><br></pre></td></tr></table></figure>
 
@@ -2715,7 +2722,7 @@ function activateLightMode(){
 <p>tips: 上述getSum方法在同一个类中，只能存在一个。因为会发生调用的不确定性</p>
 <p>注意：如果在方法书写时，这个方法拥有多参数，参数中包含可变参数，可变参数一定要写在参数列表的末尾位置。</p>
 </blockquote>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Lyouth</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.liuyu.pw/blog/posts/616958743.html">https://www.liuyu.pw/blog/posts/616958743.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.liuyu.pw/blog" target="_blank">Lyouth's Note</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/RabbitMQ/20200503190717.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/blog/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="/blog/img/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/blog/posts/1406167115.html"><img class="prev_cover" src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Linux/20191225154238.png" onerror="onerror=null;src='/blog/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux基本操作记录</div></div></a></div><div class="next-post pull_right"><a href="/blog/posts/87330513.html"><img class="next_cover" src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191204114501.jpg" onerror="onerror=null;src='/blog/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java面向对象与常见类</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/blog/posts/87330513.html" title="Java面向对象与常见类"><img class="relatedPosts_cover" src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191204114501.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-03</div><div class="relatedPosts_title">Java面向对象与常见类</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Lyouth</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.liuyu.pw/blog/posts/616958743.html">https://www.liuyu.pw/blog/posts/616958743.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.liuyu.pw/blog" target="_blank">Lyouth's Note</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/RabbitMQ/20200503190717.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/blog/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="/blog/img/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/blog/posts/1406167115.html"><img class="prev_cover" data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Linux/20191225154238.png" onerror="onerror=null;src='/blog/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux基本操作记录</div></div></a></div><div class="next-post pull_right"><a href="/blog/posts/87330513.html"><img class="next_cover" data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191204114501.jpg" onerror="onerror=null;src='/blog/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java面向对象与常见类</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/blog/posts/87330513.html" title="Java面向对象与常见类"><img class="relatedPosts_cover" data-src="https://cdn.jsdelivr.net/gh/liuyu1994/Picture/hexo/Butterflys/post/Java/20191204114501.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-03</div><div class="relatedPosts_title">Java面向对象与常见类</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
   var from = from
   var setting = set.split(',').filter(function(item){
   return from.indexOf(item) > -1
@@ -2747,7 +2754,7 @@ window.valine = new Valine({
 });</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">Copyright &copy;2017 - 2020  Lyouth BLOG</div><div class="framework-info"><span>Power by </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/blog/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
 POWERMODE.shake = true;
 document.body.addEventListener('input', POWERMODE);
-</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/blog/js/third-party/ClickShowText.js"></script><script>var endLoading = function () {
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/blog/js/third-party/ClickShowText.js"></script><script>var endLoading = function () {
   document.body.style.overflow = 'auto';
   document.getElementById('loading-box').classList.add("loaded")
 }

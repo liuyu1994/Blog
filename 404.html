@@ -11,7 +11,7 @@
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
-  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"该文章的有效性在正常时效内，但不排除过时情况，仅供参考","messageNext":"days since the last update, the content of the article may be outdated."},
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"该文章最近更新于","messageNext":"天之前，文章内容有可能过时。"},
   highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
   copy: {
     success: '复制成功',
@@ -95,7 +95,7 @@ const getScript = url => new Promise((resolve, reject) => {
   isHome: false,
   isHighlightShrink: true,
   isToc: false,
-  postUpdate: '2021-01-16 17:57:32'
+  postUpdate: '2021-01-23 14:41:28'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
